@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "ComputeManagementClient",
-    "description": "The Compute Management Client.",
+    "description": "The Compute Management Client. with anew frok",
     "version": "2019-12-01"
   },
   "host": "management.azure.com",
