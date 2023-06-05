@@ -26,26 +26,31 @@ These are the global settings for the Resource API.
 
 ``` yaml
 openapi-type: arm
+tag: package-subscriptions-2022-12
+```
+
+``` yaml $(package-privatelinks)
+tag: package-privatelinks-2020-05
 ```
 
 ``` yaml $(package-features)
-tag: package-features-2015-12
+tag: package-features-2021-07
 ```
 
 ``` yaml $(package-locks)
-tag: package-locks-2016-09
+tag: package-locks-2020-05
 ```
 
 ``` yaml $(package-policy)
-tag: package-policy-2019-09
+tag: package-policy-2022-06
 ```
 
 ``` yaml $(package-resources)
-tag: package-resources-2019-10
+tag: package-resources-2022-09
 ```
 
 ``` yaml $(package-subscriptions)
-tag: package-subscriptions-2019-11
+tag: package-subscriptions-2022-12
 ```
 
 ``` yaml $(package-links)
@@ -57,16 +62,268 @@ tag: package-managedapplications-2018-06
 ```
 
 ``` yaml $(package-deploymentscripts)
-tag: package-deploymentscripts-2019-10-preview
+tag: package-deploymentscripts-2020-10
 ```
 
-### Tag: package-subscriptions-2020-01
+``` yaml $(package-templatespecs)
+tag: package-templatespecs-2022-02
+```
 
-These settings apply only when `--tag=package-subscriptions-2020-01` is specified on the command line.
+``` yaml $(package-deploymentstacks)
+tag: package-deploymentstacks-2022-08-preview
+```
 
-```yaml $(tag) == 'package-subscriptions-2020-01'
+``` yaml $(package-changes)
+tag: package-changes-2022-05
+```
+
+``` yaml $(package-snapshots)
+tag: package-snapshots-2022-11
+```
+
+
+### Tag: package-2022-12
+
+These settings apply only when `--tag=package-2022-12` is specified on the command line.
+
+```yaml $(tag) == 'package-2022-12'
 input-file:
-  - Microsoft.Resources/stable/2020-01-01/subscriptions.json
+  - Microsoft.Resources/stable/2022-12-01/subscriptions.json
+```
+
+### Tag: package-policy-2022-08-preview-only
+
+These settings apply only when `--tag=package-policy-2022-08-preview-only` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2022-08-preview-only'
+input-file:
+- Microsoft.Authorization/preview/2022-08-01-preview/policyVariables.json
+- Microsoft.Authorization/preview/2022-08-01-preview/policyVariableValues.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
+```
+
+### Tag: package-policy-2022-07-preview-only
+
+These settings apply only when `--tag=package-policy-2022-07-preview-only` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2022-07-preview-only'
+input-file:
+- Microsoft.Authorization/preview/2022-07-01-preview/policyExemptions.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
+```
+
+### Tag: package-policy-2022-06-only
+
+These settings apply only when `--tag=package-policy-2022-06-only` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2022-06-only'
+input-file:
+- Microsoft.Authorization/stable/2022-06-01/policyAssignments.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
+```
+
+### Tag: package-policy-2022-06
+
+These settings apply only when `--tag=package-policy-2022-06` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2022-06'
+input-file:
+- Microsoft.Authorization/stable/2020-09-01/dataPolicyManifests.json
+- Microsoft.Authorization/stable/2021-06-01/policyDefinitions.json
+- Microsoft.Authorization/stable/2021-06-01/policySetDefinitions.json
+- Microsoft.Authorization/stable/2022-06-01/policyAssignments.json
+- Microsoft.Authorization/preview/2022-07-01-preview/policyExemptions.json
+- Microsoft.Authorization/preview/2022-08-01-preview/policyVariables.json
+- Microsoft.Authorization/preview/2022-08-01-preview/policyVariableValues.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
+```
+
+### Tag: package-changes-2023-03-01-preview
+
+These settings apply only when `--tag=package-changes-2023-03-01-preview` is specified on the command line.
+
+``` yaml $(tag) == 'package-changes-2023-03-01-preview'
+input-file:
+- Microsoft.Resources/preview/2023-03-01-preview/changes.json
+```
+
+### Tag: package-snapshots-2022-11
+
+These settings apply only when `--tag=package-snapshots-2022-11` is specified on the command line.
+
+``` yaml $(tag) == 'package-snapshots-2022-11'
+input-file:
+- Microsoft.Resources/preview/2022-11-01-preview/snapshots.json
+```
+
+### Tag: package-changes-2022-05
+
+These settings apply only when `--tag=package-changes-2022-05` is specified on the command line.
+
+``` yaml $(tag) == 'package-changes-2022-05'
+input-file:
+- Microsoft.Resources/stable/2022-05-01/changes.json
+```
+
+### Tag: package-changes-2022-03-01-preview
+
+These settings apply only when `--tag=package-changes-2022-03-01-preview` is specified on the command line.
+
+``` yaml $(tag) == 'package-changes-2022-03-01-preview'
+input-file:
+- Microsoft.Resources/preview/2022-03-01-preview/changes.json
+```
+
+### Tag: package-policy-2021-06
+
+These settings apply only when `--tag=package-policy-2021-06` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2021-06'
+input-file:
+- Microsoft.Authorization/stable/2020-09-01/dataPolicyManifests.json
+- Microsoft.Authorization/stable/2021-06-01/policyAssignments.json
+- Microsoft.Authorization/stable/2021-06-01/policyDefinitions.json
+- Microsoft.Authorization/stable/2021-06-01/policySetDefinitions.json
+- Microsoft.Authorization/preview/2020-07-01-preview/policyExemptions.json
+- Microsoft.Authorization/preview/2022-08-01-preview/policyVariables.json
+- Microsoft.Authorization/preview/2022-08-01-preview/policyVariableValues.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
+```
+
+### Tag: package-policy-2021-06-only
+
+These settings apply only when `--tag=package-policy-2021-06-only` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2021-06-only'
+input-file:
+- Microsoft.Authorization/stable/2021-06-01/policyAssignments.json
+- Microsoft.Authorization/stable/2021-06-01/policyDefinitions.json
+- Microsoft.Authorization/stable/2021-06-01/policySetDefinitions.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
+```
+
+### Tag: package-privatelinks-2020-05
+
+These settings apply only when `--tag=package-privatelinks-2020-05` is specified on the command line.
+
+``` yaml $(tag) == 'package-privatelinks-2020-05'
+input-file:
+- Microsoft.Authorization/stable/2020-05-01/privateLinks.json
+```
+
+### Tag: package-locks-2020-05
+
+These settings apply only when `--tag=package-locks-2020-05` is specified on the command line.
+
+``` yaml $(tag) == 'package-locks-2020-05'
+input-file:
+- Microsoft.Authorization/stable/2020-05-01/locks.json
+```
+
+### Tag: package-resources-2022-09
+
+These settings apply only when `--tag=package-resources-2022-09` is specified on the command line.
+
+``` yaml $(tag) == 'package-resources-2022-09'
+input-file:
+- Microsoft.Resources/stable/2022-09-01/resources.json
+```
+
+### Tag: package-policy-2020-09
+
+These settings apply only when `--tag=package-policy-2020-09` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2020-09'
+input-file:
+- Microsoft.Authorization/stable/2020-09-01/dataPolicyManifests.json
+- Microsoft.Authorization/stable/2020-09-01/policyAssignments.json
+- Microsoft.Authorization/stable/2020-09-01/policyDefinitions.json
+- Microsoft.Authorization/stable/2020-09-01/policySetDefinitions.json
+- Microsoft.Authorization/preview/2020-07-01-preview/policyExemptions.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
+```
+
+### Tag: package-policy-2020-09-only
+
+These settings apply only when `--tag=package-policy-2020-09-only` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2020-09-only'
+input-file:
+- Microsoft.Authorization/stable/2020-09-01/dataPolicyManifests.json
+- Microsoft.Authorization/stable/2020-09-01/policyAssignments.json
+- Microsoft.Authorization/stable/2020-09-01/policyDefinitions.json
+- Microsoft.Authorization/stable/2020-09-01/policySetDefinitions.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
+```
+
+### Tag: package-locks-2017-04
+
+These settings apply only when `--tag=package-locks-2017-04` is specified on the command line.
+
+``` yaml $(tag) == 'package-locks-2017-04'
+input-file:
+- Microsoft.Authorization/stable/2017-04-01/locks.json
+```
+
+### Tag: package-preview-2020-08
+
+These settings apply only when `--tag=package-preview-2020-08` is specified on the command line.
+
+``` yaml $(tag) == 'package-preview-2020-08'
+input-file:
+  - Microsoft.Solutions/preview/2020-08-21-preview/managedapplications.json
+```
+
+### Tag: package-subscriptions-2022-12
+
+These settings apply only when `--tag=package-subscriptions-2022-12` is specified on the command line.
+
+``` yaml $(tag) == 'package-subscriptions-2022-12'
+input-file:
+- Microsoft.Resources/stable/2022-12-01/subscriptions.json
+```
+
+
+### Tag: package-subscriptions-2021-01
+
+These settings apply only when `--tag=package-subscriptions-2021-01` is specified on the command line.
+
+``` yaml $(tag) == 'package-subscriptions-2021-01'
+input-file:
+- Microsoft.Resources/stable/2021-01-01/subscriptions.json
+```
+
+### Tag: package-deploymentscripts-2020-10
+
+These settings apply only when `--tag=package-deploymentscripts-2020-10` is specified on the command line.
+
+``` yaml $(tag) == 'package-deploymentscripts-2020-10'
+input-file:
+- Microsoft.Resources/stable/2020-10-01/deploymentScripts.json
 ```
 
 ### Tag: package-deploymentscripts-2019-10-preview
@@ -76,6 +333,20 @@ These settings apply only when `--tag=package-deploymentscripts-2019-10-preview`
 ``` yaml $(tag) == 'package-deploymentscripts-2019-10-preview'
 input-file:
 - Microsoft.Resources/preview/2019-10-01-preview/deploymentScripts.json
+```
+
+### Tag: package-features-2021-07
+
+These settings apply only when `--tag=package-features-2021-07` is specified on the command line.
+
+``` yaml $(tag) == 'package-features-2021-07'
+input-file:
+- Microsoft.Features/stable/2021-07-01/features.json
+- Microsoft.Features/stable/2021-07-01/SubscriptionFeatureRegistration.json
+
+# Needed when there is more than one input file
+override-info:
+  title: FeatureClient
 ```
 
 ### Tag: package-features-2015-12
@@ -103,6 +374,35 @@ These settings apply only when `--tag=package-locks-2015-01` is specified on the
 ``` yaml $(tag) == 'package-locks-2015-01'
 input-file:
 - Microsoft.Authorization/stable/2015-01-01/locks.json
+```
+
+### Tag: package-policy-2020-03
+
+These settings apply only when `--tag=package-policy-2020-03` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2020-03'
+input-file:
+- Microsoft.Authorization/stable/2020-03-01/policyAssignments.json
+- Microsoft.Authorization/stable/2020-03-01/policyDefinitions.json
+- Microsoft.Authorization/stable/2020-03-01/policySetDefinitions.json
+- Microsoft.Authorization/preview/2020-07-01-preview/policyExemptions.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
+```
+
+### Tag: package-policy-2020-07-preview-only
+
+These settings apply only when `--tag=package-policy-2020-07-preview-only` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2020-07-preview-only'
+input-file:
+- Microsoft.Authorization/preview/2020-07-01-preview/policyExemptions.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
 ```
 
 ### Tag: package-policy-2019-09
@@ -209,6 +509,65 @@ override-info:
   title: PolicyClient
 ```
 
+### Tag: package-policy-2017-06-preview-only
+
+These settings apply only when `--tag=package-policy-2017-06-preview-only` is specified on the command line.
+
+``` yaml $(tag) == 'package-policy-2017-06-preview-only'
+input-file:
+- Microsoft.Authorization/preview/2017-06-01-preview/policyAssignments.json
+- Microsoft.Authorization/preview/2017-06-01-preview/policySetDefinitions.json
+
+# Needed when there is more than one input file
+override-info:
+  title: PolicyClient
+```
+
+### Tag: package-templatespecs-2022-02
+
+These settings apply only when `--tag=package-templatespecs-2022-02` is specified on the command line.
+
+``` yaml $(tag) == 'package-templatespecs-2022-02'
+input-file:
+- Microsoft.Resources/stable/2022-02-01/templateSpecs.json
+```
+
+### Tag: package-templatespecs-2021-05
+
+These settings apply only when `--tag=package-templatespecs-2021-05` is specified on the command line.
+
+``` yaml $(tag) == 'package-templatespecs-2021-05'
+input-file:
+- Microsoft.Resources/stable/2021-05-01/templateSpecs.json
+```
+
+### Tag: package-templatespecs-2021-03-preview
+
+These settings apply only when `--tag=package-templatespecs-2021-03-preview` is specified on the command line.
+
+``` yaml $(tag) == 'package-templatespecs-2021-03-preview'
+input-file:
+- Microsoft.Resources/preview/2021-03-01-preview/templateSpecs.json
+```
+
+### Tag: package-templatespecs-2019-06-preview
+
+These settings apply only when `--tag=package-templatespecs-2019-06-preview` is specified on the command line.
+
+``` yaml $(tag) == 'package-templatespecs-2019-06-preview'
+input-file:
+- Microsoft.Resources/preview/2019-06-01-preview/templateSpecs.json
+```
+
+### Tag: package-deploymentstacks-2022-08-preview
+
+These settings apply only when `--tag=package-deploymentstacks-2022-08-preview` is specified on the command line.
+
+``` yaml $(tag) == 'package-deploymentstacks-2022-08-preview'
+input-file:
+- Microsoft.Resources/preview/2022-08-01-preview/deploymentStacks.json
+```
+
 ### Tag: package-policy-2016-12
 
 These settings apply only when `--tag=package-policy-2016-12` is specified on the command line.
@@ -239,6 +598,51 @@ These settings apply only when `--tag=package-policy-2015-10` is specified on th
 ``` yaml $(tag) == 'package-policy-2015-10'
 input-file:
 - Microsoft.Authorization/preview/2015-10-01-preview/policy.json
+```
+
+### Tag: package-resources-2021-04
+
+These settings apply only when `--tag=package-resources-2021-04` is specified on the command line.
+
+``` yaml $(tag) == 'package-resources-2021-04'
+input-file:
+- Microsoft.Resources/stable/2021-04-01/resources.json
+```
+
+### Tag: package-resources-2021-01
+
+These settings apply only when `--tag=package-resources-2021-01` is specified on the command line.
+
+``` yaml $(tag) == 'package-resources-2021-01'
+input-file:
+- Microsoft.Resources/stable/2021-01-01/resources.json
+```
+
+### Tag: package-resources-2020-10
+
+These settings apply only when `--tag=package-resources-2020-10` is specified on the command line.
+
+``` yaml $(tag) == 'package-resources-2020-10'
+input-file:
+  - Microsoft.Resources/stable/2020-10-01/resources.json
+```
+
+### Tag: package-resources-2020-08
+
+These settings apply only when `--tag=package-resources-2020-08` is specified on the command line.
+
+``` yaml $(tag) == 'package-resources-2020-08'
+input-file:
+  - Microsoft.Resources/stable/2020-08-01/resources.json
+```
+
+### Tag: package-resources-2020-06
+
+These settings apply only when `--tag=package-resources-2020-06` is specified on the command line.
+
+``` yaml $(tag) == 'package-resources-2020-06'
+input-file:
+- Microsoft.Resources/stable/2020-06-01/resources.json
 ```
 
 ### Tag: package-resources-2019-10
@@ -358,6 +762,15 @@ input-file:
 - Microsoft.Resources/stable/2015-11-01/resources.json
 ```
 
+### Tag: package-subscriptions-2020-01
+
+These settings apply only when `--tag=package-subscriptions-2020-01` is specified on the command line.
+
+``` yaml $(tag) == 'package-subscriptions-2020-01'
+input-file:
+  - Microsoft.Resources/stable/2020-01-01/subscriptions.json
+```
+
 ### Tag: package-subscriptions-2019-11
 
 These settings apply only when `--tag=package-subscriptions-2019-11` is specified on the command line.
@@ -457,6 +870,10 @@ directive:
     where: $.paths
     reason: policy set definition under an extension resource with Microsoft.Management
   - suppress: UniqueResourcePaths
+    from: resources.json
+    where: $.paths
+    reason: route definitions under an extension resource with Microsoft.Management
+  - suppress: UniqueResourcePaths
     from: policyDefinitions.json
     where: $.paths
     reason: policy definition under an extension resource with Microsoft.Management
@@ -464,8 +881,16 @@ directive:
     from: policyAssignments.json
     where: $.paths
     reason: policy assignment under an extension resource with Microsoft.Management
+  - suppress: UniqueResourcePaths
+    from: policyExemptions.json
+    where: $.paths
+    reason: policy exemption under an extension resource with Microsoft.Management
   - suppress: OperationsAPIImplementation
     from: policyAssignments.json
+    where: $.paths
+    reason: operation APIs for Microsoft.Authorization are to be defined in RBAC swagger
+  - suppress: OperationsAPIImplementation
+    from: privateLinks.json
     where: $.paths
     reason: operation APIs for Microsoft.Authorization are to be defined in RBAC swagger
   - suppress: OperationsAPIImplementation
@@ -476,6 +901,26 @@ directive:
     from: policySetDefinitions.json
     where: $.paths
     reason: operation APIs for Microsoft.Authorization are to be defined in RBAC swagger
+  - suppress: OperationsAPIImplementation
+    from: policyExemptions.json
+    where: $.paths
+    reason: operation APIs for Microsoft.Authorization are to be defined in RBAC swagger
+  - suppress: OperationsAPIImplementation
+    from: policyVariables.json
+    where: $.paths
+    reason: operation APIs for Microsoft.Authorization are to be defined in RBAC swagger
+  - suppress: OperationsAPIImplementation
+    from: policyVariableValues.json
+    where: $.paths
+    reason: operation APIs for Microsoft.Authorization are to be defined in RBAC swagger
+  - suppress: BodyTopLevelProperties
+    from: policyAssignments.json
+    where: $.definitions.PolicyAssignment.properties
+    reason: Currently systemData is not allowed
+  - suppress: BodyTopLevelProperties
+    from: policyExemptions.json
+    where: $.definitions.PolicyExemption.properties
+    reason: Currently systemData is not allowed
   - suppress: BodyTopLevelProperties
     from: resources.json
     where: $.definitions.ResourceGroup.properties
@@ -487,7 +932,7 @@ directive:
   - suppress: BodyTopLevelProperties
     from: resources.json
     where: $.definitions.GenericResourceExpanded.properties
-    reason: createdTime,changedTime & provisioningState are top-level properties
+    reason: 'createdTime,changedTime & provisioningState are top-level properties'
   - suppress: BodyTopLevelProperties
     from: resources.json
     where: $.definitions.TagDetails.properties
@@ -506,7 +951,7 @@ directive:
     reason: TagDetails will be deprecated soon
   - suppress: XmsResourceInPutResponse
     from: resources.json
-    where: $.paths["/subscriptions/{subscriptionId}/tagNames/{tagName}"].put
+    where: '$.paths["/subscriptions/{subscriptionId}/tagNames/{tagName}"].put'
     reason: TagDetails is not an Azure resource
   - suppress: BodyTopLevelProperties
     from: managedapplications.json
@@ -525,19 +970,19 @@ directive:
     where: $.definitions.GenericResource.properties
     reason: managedBy is a top level property
   - from: deploymentScripts.json
-    suppress: TrackedResourceGetOperation 
+    suppress: TrackedResourceGetOperation
     where: $.definitions.AzureCliScript
     reason: Tooling issue.
   - from: deploymentScripts.json
-    suppress: TrackedResourcePatchOperation 
+    suppress: TrackedResourcePatchOperation
     where: $.definitions.AzureCliScript
     reason: Tooling issue.
   - from: deploymentScripts.json
-    suppress: TrackedResourceGetOperation 
+    suppress: TrackedResourceGetOperation
     where: $.definitions.AzurePowerShellScript
     reason: Tooling issue
   - from: deploymentScripts.json
-    suppress: TrackedResourcePatchOperation 
+    suppress: TrackedResourcePatchOperation
     where: $.definitions.AzurePowerShellScript
     reason: Tooling issue
   - from: deploymentScripts.json
@@ -545,12 +990,112 @@ directive:
     where: $.paths
     reason: OperationsAPI will come from Resources
   - from: deploymentScripts.json
-    suppress: R3006 #BodyTopLevelProperties
-    where: 
-    - $.definitions.DeploymentScript.properties
-    - $.definitions.AzureCliScript.properties
-    - $.definitions.AzurePowerShellScript.properties
+    suppress: R3006
+    where:
+      - $.definitions.DeploymentScript.properties
+      - $.definitions.AzureCliScript.properties
+      - $.definitions.AzurePowerShellScript.properties
     reason: Currently systemData is not allowed
+  - from: deploymentStacks.json
+    suppress: OperationsAPIImplementation
+    where: $.paths
+    reason: OperationsAPI will come from Resources
+  - suppress: OperationsAPIImplementation
+    from: templateSpecs.json
+    where: $.paths
+    reason: OperationsAPI will come from Resources
+  - suppress: R3006
+    from: templateSpecs.json
+    where:
+      - $.definitions.TemplateSpec.properties
+      - $.definitions.TemplateSpecVersion.properties
+      - $.definitions.TemplateSpecUpdateModel.properties
+      - $.definitions.TemplateSpecVersionUpdateModel.properties
+    reason: Currently systemData is not allowed
+  - suppress: TrackedResourceListByImmediateParent
+    from: templateSpecs.json
+    where: $.definitions
+    reason: Tooling issue
+  - suppress: TrackedResourceListByResourceGroup
+    from: templateSpecs.json
+    where: $.definitions.TemplateSpecVersion
+    reason: Tooling issue
+  - from: deploymentStacks.json
+    suppress: TrackedResourcePatchOperation
+    where: $.definitions
+    reason: Not a tracked resource.
+  - suppress: OperationsAPIImplementation
+    where: $.paths
+    from: dataPolicyManifests.json
+    reason: operation APIs for Microsoft.Authorization are to be defined in RBAC swagger
+  - suppress: EnumInsteadOfBoolean
+    where: $.definitions.DataManifestCustomResourceFunctionDefinition.properties.allowCustomProperties
+    from: dataPolicyManifests.json
+    reason: 'This property can only have two values. '
+  - suppress: EnumInsteadOfBoolean
+    where: $.definitions.DataPolicyManifestProperties.properties.isBuiltInOnly
+    from: dataPolicyManifests.json
+    reason: 'This property can only have two values. '
+  - suppress: PageableOperation
+    where: '$.paths["/providers/Microsoft.Authorization/dataPolicyManifests"].get'
+    from: dataPolicyManifests.json
+    reason: Pagination not supported. The size of the result list is pretty limited
+  - suppress: DescriptionAndTitleMissing
+    where: $.definitions.AliasPathMetadata
+    from: resources.json
+    reason: This was already checked in - not my code
+  - suppress: XmsExamplesRequired
+    where: $.paths
+    from: resources.json
+    reason: Pre-existing lint error. Not related to this version release.
+  - suppress: TopLevelResourcesListByResourceGroup
+    from: policyDefinitions.json
+    reason: Policy definitions are a proxy resource that is only usable on subscriptions or management groups
+  - suppress: TopLevelResourcesListByResourceGroup
+    from: policyVariables.json
+    reason: Policy variables are a proxy resource that is only usable on subscriptions or management groups
+  - suppress: TopLevelResourcesListByResourceGroup
+    from: policyVariableValues.json
+    reason: Policy variable values are a proxy resource that is only usable on subscriptions or management groups
+  - suppress: TopLevelResourcesListByResourceGroup
+    from: policySetDefinitions.json
+    reason: Policy set definitions are a proxy resource that is only usable on subscriptions or management groups
+  - suppress: RequiredReadOnlySystemData
+    from: privateLinks.json
+    reason: We do not yet support system data
+  - from: SubscriptionFeatureRegistration.json
+    suppress: R4009
+    reason: Currently systemData is not allowed
+  - from: Subscriptions.json
+    suppress: OperationsAPIImplementation
+    reason: 'Duplicate Operations API causes generation issues'
+  - suppress: TopLevelResourcesListByResourceGroup
+    from: privateLinks.json
+    reason: The resource is managed in a management group level (instead of inside a resource group)
+  - suppress: TopLevelResourcesListBySubscription
+    from: changes.json
+    reason: We will be pushing customers to use Azure Resource Graph for those at scale scenarios. 
+  - from: changes.json
+    suppress: OperationsAPIImplementation
+    where: $.paths
+    reason: 'Duplicate Operations API causes generation issues'
+  - from: snapshots.json
+    suppress: OperationsAPIImplementation
+    where: $.paths
+    reason: 'Duplicate Operations API causes generation issues'
+  - suppress: TopLevelResourcesListBySubscription
+    from: snapshots.json
+    reason: We will be pushing customers to use Azure Resource Graph for those at scale scenarios. 
+  - suppress: RequiredReadOnlySystemData
+    from: changes.json
+    reason: System Metadata from a change resource perspective is irrelevant
+  - from: resources.json
+    suppress: R4009
+    where:
+      - '$.paths["/{scope}/providers/Microsoft.Resources/tags/default"].put'
+      - '$.paths["/{scope}/providers/Microsoft.Resources/tags/default"].patch'
+      - '$.paths["/{scope}/providers/Microsoft.Resources/tags/default"].get'
+    reason: The tags API does not support system data
 ```
 
 ---
@@ -564,21 +1109,19 @@ This is not used by Autorest itself.
 
 ``` yaml $(swagger-to-sdk)
 swagger-to-sdk:
-  - repo: azure-sdk-for-net
-  - repo: azure-sdk-for-python
-    after_scripts:
-      - python ./scripts/multiapi_init_gen.py azure-mgmt-resource#features
-      - python ./scripts/multiapi_init_gen.py azure-mgmt-resource#locks
-      - python ./scripts/multiapi_init_gen.py azure-mgmt-resource#policy
-      - python ./scripts/multiapi_init_gen.py azure-mgmt-resource#resources
-      - python ./scripts/multiapi_init_gen.py azure-mgmt-resource#subscriptions
-      - python ./scripts/multiapi_init_gen.py azure-mgmt-resource#links
-      - python ./scripts/multiapi_init_gen.py azure-mgmt-resource#deploymentscripts
+  - repo: azure-sdk-for-net-track2
+  - repo: azure-sdk-for-python-track2
   - repo: azure-sdk-for-java
   - repo: azure-sdk-for-go
   - repo: azure-sdk-for-node
   - repo: azure-sdk-for-js
+  - repo: azure-resource-manager-schemas
+  - repo: azure-powershell
 ```
+
+## Python
+
+See configuration in [readme.python.md](./readme.python.md)
 
 ## Go
 
@@ -602,6 +1145,10 @@ batch:
   - package-links: true
   - package-managedapplications: true
   - package-deploymentscripts: true
+  - package-templatespecs: true
+  - package-deploymentstacks: true
+  - package-changes: true
+  - package-snapshots: true
 ```
 
 ### Tag: profile-hybrid-2019-03-01
@@ -616,76 +1163,7 @@ input-file:
 - Microsoft.Authorization/stable/2016-12-01/policyAssignments.json
 - Microsoft.Resources/stable/2016-06-01/subscriptions.json
 - Microsoft.Resources/stable/2018-05-01/resources.json
-```
 
-## Multi-API/Profile support for AutoRest v3 generators
-
-AutoRest V3 generators require the use of `--tag=all-api-versions` to select api files.
-
-This block is updated by an automatic script. Edits may be lost!
-
-``` yaml $(tag) == 'all-api-versions' /* autogenerated */
-# include the azure profile definitions from the standard location
-require: $(this-folder)/../../../profiles/readme.md
-
-# all the input files across all versions
-input-file:
-  - $(this-folder)/Microsoft.Resources/stable/2020-01-01/subscriptions.json
-  - $(this-folder)/Microsoft.Resources/preview/2019-10-01-preview/deploymentScripts.json
-  - $(this-folder)/Microsoft.Features/stable/2015-12-01/features.json
-  - $(this-folder)/Microsoft.Authorization/stable/2016-09-01/locks.json
-  - $(this-folder)/Microsoft.Authorization/stable/2015-01-01/locks.json
-  - $(this-folder)/Microsoft.Authorization/stable/2019-09-01/policyAssignments.json
-  - $(this-folder)/Microsoft.Authorization/stable/2019-09-01/policyDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2019-09-01/policySetDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2019-06-01/policyAssignments.json
-  - $(this-folder)/Microsoft.Authorization/stable/2019-06-01/policyDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2019-06-01/policySetDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2019-01-01/policyAssignments.json
-  - $(this-folder)/Microsoft.Authorization/stable/2019-01-01/policyDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2019-01-01/policySetDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2018-05-01/policyAssignments.json
-  - $(this-folder)/Microsoft.Authorization/stable/2018-05-01/policyDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2018-05-01/policySetDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2018-03-01/policyAssignments.json
-  - $(this-folder)/Microsoft.Authorization/stable/2018-03-01/policyDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2018-03-01/policySetDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/preview/2017-06-01-preview/policyAssignments.json
-  - $(this-folder)/Microsoft.Authorization/preview/2017-06-01-preview/policySetDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2016-12-01/policyDefinitions.json
-  - $(this-folder)/Microsoft.Authorization/stable/2016-12-01/policyAssignments.json
-  - $(this-folder)/Microsoft.Authorization/stable/2016-04-01/policy.json
-  - $(this-folder)/Microsoft.Authorization/preview/2015-10-01-preview/policy.json
-  - $(this-folder)/Microsoft.Resources/stable/2019-10-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2019-08-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2019-07-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2019-05-10/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2019-05-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2019-03-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2018-05-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2018-02-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2017-05-10/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2016-09-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2016-07-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2016-02-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2015-11-01/resources.json
-  - $(this-folder)/Microsoft.Resources/stable/2019-11-01/subscriptions.json
-  - $(this-folder)/Microsoft.Resources/stable/2019-06-01/subscriptions.json
-  - $(this-folder)/Microsoft.Resources/stable/2018-06-01/subscriptions.json
-  - $(this-folder)/Microsoft.Resources/stable/2016-06-01/subscriptions.json
-  - $(this-folder)/Microsoft.Resources/stable/2015-11-01/subscriptions.json
-  - $(this-folder)/Microsoft.Resources/stable/2016-09-01/links.json
-  - $(this-folder)/Microsoft.Solutions/stable/2019-07-01/managedapplications.json
-  - $(this-folder)/Microsoft.Solutions/stable/2018-06-01/managedapplications.json
-  - $(this-folder)/Microsoft.Solutions/stable/2017-09-01/managedapplications.json
-  - $(this-folder)/Microsoft.Solutions/preview/2016-09-01-preview/managedapplications.json
-
-```
-
-If there are files that should not be in the `all-api-versions` set,
-uncomment the  `exclude-file` section below and add the file paths.
-
-``` yaml $(tag) == 'all-api-versions'
-#exclude-file: 
-#  - $(this-folder)/Microsoft.Example/stable/2010-01-01/somefile.json
+override-info:
+  title: PolicyClient
 ```

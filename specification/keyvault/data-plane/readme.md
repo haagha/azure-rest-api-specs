@@ -26,29 +26,125 @@ These are the global settings for the KeyVault API.
 
 ``` yaml
 openapi-type: data-plane
-tag: package-7.2-preview
+tag: package-7.4
+```
+
+
+### Tag: package-7.4
+
+These settings apply only when `--tag=package-7.4` is specified on the command line.
+
+```yaml $(tag) == 'package-7.4'
+input-file:
+  - Microsoft.KeyVault/stable/7.4/backuprestore.json
+  - Microsoft.KeyVault/stable/7.4/certificates.json
+  - Microsoft.KeyVault/stable/7.4/common.json
+  - Microsoft.KeyVault/stable/7.4/keys.json
+  - Microsoft.KeyVault/stable/7.4/rbac.json
+  - Microsoft.KeyVault/stable/7.4/secrets.json
+  - Microsoft.KeyVault/stable/7.4/securitydomain.json
+  - Microsoft.KeyVault/stable/7.4/settings.json
+  - Microsoft.KeyVault/stable/7.4/storage.json
+```
+### Tag: package-preview-7.4-preview.1
+
+These settings apply only when `--tag=package-preview-7.4-preview.1` is specified on the command line.
+
+``` yaml $(tag) == 'package-preview-7.4-preview.1'
+input-file:
+  - Microsoft.KeyVault/preview/7.4-preview.1/backuprestore.json
+  - Microsoft.KeyVault/preview/7.4-preview.1/certificates.json
+  - Microsoft.KeyVault/preview/7.4-preview.1/common.json
+  - Microsoft.KeyVault/preview/7.4-preview.1/keys.json
+  - Microsoft.KeyVault/preview/7.4-preview.1/rbac.json
+  - Microsoft.KeyVault/preview/7.4-preview.1/secrets.json
+  - Microsoft.KeyVault/preview/7.4-preview.1/securitydomain.json
+  - Microsoft.KeyVault/preview/7.4-preview.1/settings.json
+  - Microsoft.KeyVault/preview/7.4-preview.1/storage.json
+```
+
+### Tag: package-7.3
+
+These settings apply only when `--tag=package-7.3` is specified on the command line.
+
+``` yaml $(tag) == 'package-7.3'
+input-file:
+  - Microsoft.KeyVault/stable/7.3/backuprestore.json
+  - Microsoft.KeyVault/stable/7.3/certificates.json
+  - Microsoft.KeyVault/stable/7.3/common.json
+  - Microsoft.KeyVault/stable/7.3/keys.json
+  - Microsoft.KeyVault/stable/7.3/rbac.json
+  - Microsoft.KeyVault/stable/7.3/secrets.json
+  - Microsoft.KeyVault/stable/7.3/securitydomain.json
+  - Microsoft.KeyVault/stable/7.3/storage.json
+```
+
+### Tag: package-preview-7.3-preview
+
+These settings apply only when `--tag=package-preview-7.3-preview` is specified on the command line.
+
+``` yaml $(tag) == 'package-preview-7.3-preview'
+input-file:
+  - Microsoft.KeyVault/preview/7.3-preview/backuprestore.json
+  - Microsoft.KeyVault/preview/7.3-preview/certificates.json
+  - Microsoft.KeyVault/preview/7.3-preview/common.json
+  - Microsoft.KeyVault/preview/7.3-preview/keys.json
+  - Microsoft.KeyVault/preview/7.3-preview/rbac.json
+  - Microsoft.KeyVault/preview/7.3-preview/secrets.json
+  - Microsoft.KeyVault/preview/7.3-preview/securitydomain.json
+  - Microsoft.KeyVault/preview/7.3-preview/storage.json
+```
+
+### Tag: package-7.2
+
+These settings apply only when `--tag=package-7.2` is specified on the command line.
+
+``` yaml $(tag) == 'package-7.2'
+input-file:
+- Microsoft.KeyVault/stable/7.2/certificates.json
+- Microsoft.KeyVault/stable/7.2/common.json
+- Microsoft.KeyVault/stable/7.2/keys.json
+- Microsoft.KeyVault/stable/7.2/rbac.json
+- Microsoft.KeyVault/stable/7.2/secrets.json
+- Microsoft.KeyVault/stable/7.2/storage.json
+- Microsoft.KeyVault/stable/7.2/backuprestore.json
+- Microsoft.KeyVault/stable/7.2/securitydomain.json
 ```
 
 ### Tag: package-7.2-preview
 
 These settings apply only when `--tag=package-7.2-preview` is specified on the command line.
 
-```yaml $(tag) == 'package-7.2-preview'
+``` yaml $(tag) == 'package-7.2-preview'
 input-file:
-- Microsoft.KeyVault/preview/7.2/certificates.json
-- Microsoft.KeyVault/preview/7.2/common.json
-- Microsoft.KeyVault/preview/7.2/keys.json
-- Microsoft.KeyVault/preview/7.2/rbac.json
-- Microsoft.KeyVault/preview/7.2/secrets.json
-- Microsoft.KeyVault/preview/7.2/storage.json
-- Microsoft.KeyVault/preview/7.2/backuprestore.json
+- Microsoft.KeyVault/preview/7.2-preview/certificates.json
+- Microsoft.KeyVault/preview/7.2-preview/common.json
+- Microsoft.KeyVault/preview/7.2-preview/keys.json
+- Microsoft.KeyVault/preview/7.2-preview/rbac.json
+- Microsoft.KeyVault/preview/7.2-preview/secrets.json
+- Microsoft.KeyVault/preview/7.2-preview/storage.json
+- Microsoft.KeyVault/preview/7.2-preview/backuprestore.json
+- Microsoft.KeyVault/preview/7.2-preview/securitydomain.json
+```
+
+### Tag: package-7.1
+
+These settings apply only when `--tag=package-7.1` is specified on the command line.
+
+``` yaml $(tag) == 'package-7.1'
+input-file:
+- Microsoft.KeyVault/stable/7.1/certificates.json
+- Microsoft.KeyVault/stable/7.1/common.json
+- Microsoft.KeyVault/stable/7.1/keys.json
+- Microsoft.KeyVault/stable/7.1/secrets.json
+- Microsoft.KeyVault/stable/7.1/storage.json
 ```
 
 ### Tag: package-7.1-preview
 
 These settings apply only when `--tag=package-7.1-preview` is specified on the command line.
 
-```yaml $(tag) == 'package-7.1-preview'
+``` yaml $(tag) == 'package-7.1-preview'
 input-file:
 - Microsoft.KeyVault/preview/7.1/certificates.json
 - Microsoft.KeyVault/preview/7.1/common.json
@@ -97,14 +193,20 @@ input-file:
 
 # Code Generation
 
-## Swagger to SDK
+## General
 
-This section describes what SDK should be generated by the automatic system.
-This is not used by Autorest itself.
+These transforms apply to any generator.
 
-``` yaml $(swagger-to-sdk)
-swagger-to-sdk:
-  - repo: azure-sdk-for-go
+``` yaml
+directive:
+# Rename models back to what they were before 7.4 for autorest-based code generators.
+# Generated names were disambiguated for generators not using autorest but still processing x-ms-enum.name.
+- from: certificates.json
+  where: $.definitions.Action
+  transform: $.properties.action_type["x-ms-enum"].name = "ActionType";
+- from: keys.json
+  where: $.definitions.LifetimeActionsType
+  transform: $.properties.type["x-ms-enum"].name = "ActionType";
 ```
 
 ## C#
@@ -153,13 +255,27 @@ require: $(this-folder)/../../../profiles/readme.md
 
 # all the input files across all versions
 input-file:
-  - $(this-folder)/Microsoft.KeyVault/preview/7.2/certificates.json
-  - $(this-folder)/Microsoft.KeyVault/preview/7.2/common.json
-  - $(this-folder)/Microsoft.KeyVault/preview/7.2/keys.json
-  - $(this-folder)/Microsoft.KeyVault/preview/7.2/rbac.json
-  - $(this-folder)/Microsoft.KeyVault/preview/7.2/secrets.json
-  - $(this-folder)/Microsoft.KeyVault/preview/7.2/storage.json
-  - $(this-folder)/Microsoft.KeyVault/preview/7.2/backuprestore.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.3-preview/certificates.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.3-preview/common.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.3-preview/keys.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.3-preview/rbac.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.3-preview/secrets.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.3-preview/storage.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.3-preview/backuprestore.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.3-preview/securitydomain.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.2-preview/certificates.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.2-preview/common.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.2-preview/keys.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.2-preview/rbac.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.2-preview/secrets.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.2-preview/storage.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.2-preview/backuprestore.json
+  - $(this-folder)/Microsoft.KeyVault/preview/7.2-preview/securitydomain.json
+  - $(this-folder)/Microsoft.KeyVault/stable/7.1/certificates.json
+  - $(this-folder)/Microsoft.KeyVault/stable/7.1/common.json
+  - $(this-folder)/Microsoft.KeyVault/stable/7.1/keys.json
+  - $(this-folder)/Microsoft.KeyVault/stable/7.1/secrets.json
+  - $(this-folder)/Microsoft.KeyVault/stable/7.1/storage.json
   - $(this-folder)/Microsoft.KeyVault/preview/7.1/certificates.json
   - $(this-folder)/Microsoft.KeyVault/preview/7.1/common.json
   - $(this-folder)/Microsoft.KeyVault/preview/7.1/keys.json
@@ -290,8 +406,20 @@ directive:
     reason: Merely refactored existing definitions into new files.
   - suppress: DefinitionsPropertiesNamesCamelCase
     from: keys.json
+    where: $.definitions.KeyBundle.properties.release_policy
+    reason: Consistency with other properties.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: keys.json
     where: $.definitions.KeyCreateParameters.properties.key_size
     reason: Merely refactored existing definitions into new files.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: keys.json
+    where: $.definitions.KeyCreateParameters.properties.public_exponent
+    reason: Consistency with other properties.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: keys.json
+    where: $.definitions.KeyCreateParameters.properties.release_policy
+    reason: Consistency with other properties.
   - suppress: DefinitionsPropertiesNamesCamelCase
     from: keys.json
     where: $.definitions.KeyCreateParameters.properties.key_ops
@@ -302,8 +430,16 @@ directive:
     reason: Merely refactored existing definitions into new files.
   - suppress: DefinitionsPropertiesNamesCamelCase
     from: keys.json
+    where: $.definitions.KeyImportParameters.properties.release_policy
+    reason: Consistency with other properties.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: keys.json
     where: $.definitions.KeyUpdateParameters.properties.key_ops
     reason: Merely refactored existing definitions into new files.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: keys.json
+    where: $.definitions.KeyUpdateParameters.properties.release_policy
+    reason: Consistency with other properties.
   - suppress: MISSING_REQUIRED_PARAMETER
     from: certificates.json
     where: $..parameters[?(@.name=='vaultBaseUrl')]
@@ -318,5 +454,36 @@ directive:
     reason: Suppress an invalid error caused by a bug in the linter.
   - suppress: MISSING_REQUIRED_PARAMETER
     from: storage.json
+    reason: Suppress an invalid error caused by a bug in the linter.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: securitydomain.json
+    where: $.definitions.TransferKey.properties.transfer_key
+    reason: Merely refactored existing definitions into new files.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: securitydomain.json
+    where: $.definitions.UploadPendingResponse.properties.status_details
+    reason: Consistency with other properties.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: securitydomain.json
+    where: $.definitions.SecurityDomainOperationStatus.properties.status_details
+    reason: Consistency with other properties.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: securitydomain.json
+    where: $.definitions.SecurityDomainJsonWebKey.properties.key_ops
+    reason: Consistency with other properties.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: securitydomain.json
+    where: $.definitions.SecurityDomainJsonWebKey.properties["x5t#S256"]
+    reason: Consistency with other properties.
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: securitydomain.json
+    where: $.definitions.TransferKey.properties.key_format
+    reason: Consistency with other properties
+  - suppress: DOUBLE_FORWARD_SLASHES_IN_URL
+    from: rbac.json
+    reason: / is a valid scope in this scenario.
+  - suppress: OBJECT_MISSING_REQUIRED_PROPERTY
+    from: rbac.json
+    where: $..parameters[?(@.name=='scope')]
     reason: Suppress an invalid error caused by a bug in the linter.
 ```

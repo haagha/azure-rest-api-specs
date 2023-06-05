@@ -19,7 +19,7 @@ csharp:
 # remove DUMMY member of enum
 directive:
     # dynamically add a DummyOrchestrationServiceName value to the enum 
-  - from: compute.json
+  - from: virtualMachineScaleSet.json
     where: $..enum
     transform: >-
       if( $.length === 1 && $[0] === "AutomaticRepairs") { 
@@ -34,6 +34,9 @@ directive:
       return $.
         replace(/.*public const string DummyOrchestrationServiceName.*/g,'').
         replace(/, 'DummyOrchestrationServiceName'/g,'');
+  - from: gallery.json
+    where: $.definitions.GalleryTargetExtendedLocation.properties.storageAccountType["x-ms-enum"].name
+    transform: return "EdgeZoneStorageAccountType"
 ```
 
 ``` yaml $(csharp) && !$(multiapi) && !$(csharp-profile)
@@ -93,4 +96,16 @@ output-folder: $(csharp-sdks-folder)/$(csharp-profile)/Compute/Management.Comput
 
 batch:
  - tag: profile-hybrid-2019-03-01
+ ```
+
+### Profile: hybrid_2020_09_01
+
+These settings apply only when `--csharp-profile=hybrid_2020_09_01` is specified on the command line.
+
+``` yaml $(csharp-profile)=='hybrid_2020_09_01'
+namespace: Microsoft.Azure.Management.Profiles.$(csharp-profile).Compute
+output-folder: $(csharp-sdks-folder)/$(csharp-profile)/Compute/Management.Compute/Generated
+
+batch:
+ - tag: profile-hybrid-2020-09-01
  ```
